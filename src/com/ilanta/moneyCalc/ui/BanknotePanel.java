@@ -36,6 +36,7 @@ public class BanknotePanel extends JPanel {
             @Override
             public void focusGained(FocusEvent e) {
                 textField.setSelectionStart(0);
+                textField.setSelectionEnd(textField.getText().length());
             }
 
             @Override
