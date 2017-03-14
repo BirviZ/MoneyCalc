@@ -1,9 +1,8 @@
 package com.ilanta.moneyCalc.ui;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainWindow extends JFrame {
     private BanknotePanel[] panel;
@@ -15,7 +14,7 @@ public class MainWindow extends JFrame {
         setResizable(false);
 
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -33,14 +32,21 @@ public class MainWindow extends JFrame {
 
         JPanel result = new JPanel();
 
-        result.setBorder(BorderFactory.createBevelBorder(1));
+        Font resFont = new Font(Font.SANS_SERIF, Font.BOLD, 36);
+
+        res.setFont(resFont);
+
+        result.setBorder(BorderFactory.createTitledBorder(""));
         result.add(res);
 
         add(result, BorderLayout.NORTH);
         add(p1, BorderLayout.CENTER);
 
         JButton calc = new JButton("Порахувати");
-        add(calc, BorderLayout.SOUTH);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(calc);
+
+        add(buttonPanel, BorderLayout.SOUTH);
 
         calc.addActionListener(e -> {
             int result1 = 0;
