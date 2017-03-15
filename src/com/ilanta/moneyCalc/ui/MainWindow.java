@@ -1,7 +1,6 @@
 package com.ilanta.moneyCalc.ui;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
