@@ -13,6 +13,9 @@ public class MainWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        Image img = new ImageIcon(MainWindow.class.getResource("/res/iconMC.png")).getImage();
+        setIconImage(img);
+        
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
