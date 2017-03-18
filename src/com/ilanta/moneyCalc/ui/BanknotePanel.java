@@ -20,6 +20,9 @@ public class BanknotePanel extends JPanel {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
         calc();
+        if(!String.valueOf(quantity).equals(textField.getText())) {
+            textField.setText(String.valueOf(quantity));
+        }
     }
 
     private void calc() {

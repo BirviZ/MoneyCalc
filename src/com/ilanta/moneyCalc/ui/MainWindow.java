@@ -65,6 +65,13 @@ public class MainWindow extends JFrame {
             res.setText(result1 + " грн.");
         });
 
+        reset.addActionListener(e -> {
+            for(BanknotePanel p: panel){
+                p.setQuantity(0);
+            }
+            res.setText("0 грн.");
+        });
+
         pack();
         setLocationRelativeTo(null);
     }
