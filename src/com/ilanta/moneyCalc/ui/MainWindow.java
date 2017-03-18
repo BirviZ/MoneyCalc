@@ -9,6 +9,14 @@ public class MainWindow extends JFrame {
     private BanknotePanel[] panel;
     private JLabel res = new JLabel("0 грн.");
 
+    private void calculate() {
+        int result1 = 0;
+        for(BanknotePanel p: panel) {
+            result1 += p.getResult();
+        }
+        res.setText(result1 + " грн.");
+    }
+
     public MainWindow() {
         setTitle("Каса");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -19,6 +27,7 @@ public class MainWindow extends JFrame {
         
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -34,6 +43,7 @@ public class MainWindow extends JFrame {
             p1.add(panel[i]);
             panel[i].setQuantity(values[i]);
         }
+        calculate();
         setLayout(new BorderLayout());
 
         JPanel result = new JPanel();
@@ -62,11 +72,7 @@ public class MainWindow extends JFrame {
         add(buttonPanel, BorderLayout.SOUTH);
 
         calc.addActionListener(e -> {
-            int result1 = 0;
-            for(BanknotePanel p: panel) {
-                result1 += p.getResult();
-            }
-            res.setText(result1 + " грн.");
+            calculate();
         });
 
         reset.addActionListener(e -> {
