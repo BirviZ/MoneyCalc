@@ -3,6 +3,8 @@ package com.ilanta.moneyCalc.ui;
 import javax.swing.*;
 import java.awt.*;
 
+import com.ilanta.moneyCalc.savings.Save;
+
 public class MainWindow extends JFrame {
     private BanknotePanel[] panel;
     private JLabel res = new JLabel("0 грн.");
@@ -25,10 +27,12 @@ public class MainWindow extends JFrame {
 
         p1.setLayout(new GridLayout(3, 3));
         int[] n = {1, 2, 5, 10, 20, 50, 100, 200, 500};
+        int[] values = Save.read();
         panel = new BanknotePanel[n.length];
         for (int i = 0; i < n.length; i++) {
             panel[i] = new BanknotePanel(n[i]);
             p1.add(panel[i]);
+            panel[i].setQuantity(values[i]);
         }
         setLayout(new BorderLayout());
 
