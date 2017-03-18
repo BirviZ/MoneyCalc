@@ -11,14 +11,25 @@ public class BanknotePanel extends JPanel {
     private JLabel label = new JLabel("0 грн.");
     private int quantity;
     private int result;
+    private final int nominal;
 
     public int getResult() {
         return result;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+        calc();
+    }
+
+    private void calc() {
+        result = quantity*nominal;
+        label.setText(String.valueOf(result).concat(" грн."));
+    }
+
     BanknotePanel(int nom) {
 
-        final int nominal = nom;
+        nominal = nom;
 
         Border border = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), String.valueOf(nominal));
 
@@ -47,8 +58,7 @@ public class BanknotePanel extends JPanel {
                     quantity = 0;
                     textField.setText("0");
                 }
-                result = quantity*nominal;
-                label.setText(String.valueOf(result).concat(" грн."));
+                calc();
             }
         });
     }
