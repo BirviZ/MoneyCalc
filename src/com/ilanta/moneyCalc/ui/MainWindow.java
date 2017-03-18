@@ -38,15 +38,22 @@ public class MainWindow extends JFrame {
 
         res.setFont(resFont);
 
-        result.setBorder(BorderFactory.createTitledBorder(""));
+        result.setBorder(BorderFactory.createEtchedBorder());
         result.add(res);
 
         add(result, BorderLayout.NORTH);
         add(p1, BorderLayout.CENTER);
 
         JButton calc = new JButton("Порахувати");
+        JButton reset = new JButton("Скинути");
+        JButton del = new JButton("Видалити збереження");
+        calc.setFont(new Font(calc.getFont().getFontName(), Font.BOLD, calc.getFont().getSize()+6));
         JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(1, 3));
+        buttonPanel.setBorder(BorderFactory.createEtchedBorder());
+        buttonPanel.add(reset);
         buttonPanel.add(calc);
+        buttonPanel.add(del);
 
         add(buttonPanel, BorderLayout.SOUTH);
 

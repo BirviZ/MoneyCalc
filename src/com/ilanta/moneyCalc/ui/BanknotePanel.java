@@ -20,7 +20,7 @@ public class BanknotePanel extends JPanel {
 
         final int nominal = nom;
 
-        Border border = BorderFactory.createTitledBorder(String.valueOf(nominal));
+        Border border = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), String.valueOf(nominal));
 
         label.setHorizontalTextPosition(JLabel.RIGHT);
         label.setHorizontalAlignment(JLabel.RIGHT);
