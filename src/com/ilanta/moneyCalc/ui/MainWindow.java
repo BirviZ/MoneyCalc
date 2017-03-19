@@ -71,9 +71,7 @@ public class MainWindow extends JFrame {
 
         add(buttonPanel, BorderLayout.SOUTH);
 
-        calc.addActionListener(e -> {
-            calculate();
-        });
+        calc.addActionListener(e -> calculate());
 
         reset.addActionListener(e -> {
             for(BanknotePanel p: panel){
@@ -82,9 +80,7 @@ public class MainWindow extends JFrame {
             res.setText("0 грн.");
         });
 
-        del.addActionListener(e -> {
-            Save.delete();
-        });
+        del.addActionListener(e -> Save.delete());
 
         pack();
         setLocationRelativeTo(null);
