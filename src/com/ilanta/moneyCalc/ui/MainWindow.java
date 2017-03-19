@@ -71,7 +71,14 @@ public class MainWindow extends JFrame {
 
         add(buttonPanel, BorderLayout.SOUTH);
 
-        calc.addActionListener(e -> calculate());
+        calc.addActionListener(e -> {
+            calculate();
+            int v[] = new int[panel.length];
+            for(int i = 0; i < panel.length; i++) {
+                v[i] = panel[i].getResult();
+            }
+            Save.write(v);
+        });
 
         reset.addActionListener(e -> {
             for(BanknotePanel p: panel){
