@@ -26,8 +26,8 @@ public class MainWindow extends JFrame {
         setIconImage(img);
         
         try {
-            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,7 +75,7 @@ public class MainWindow extends JFrame {
             calculate();
             int v[] = new int[panel.length];
             for(int i = 0; i < panel.length; i++) {
-                v[i] = panel[i].getResult();
+                v[i] = panel[i].getQuantity();
             }
             Save.write(v);
         });

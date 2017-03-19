@@ -17,6 +17,10 @@ class BanknotePanel extends JPanel {
         return result;
     }
 
+    int getQuantity() {
+        return quantity;
+    }
+
     void setQuantity(int quantity) {
         this.quantity = quantity;
         calc();
