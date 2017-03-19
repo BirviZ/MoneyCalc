@@ -82,6 +82,10 @@ public class MainWindow extends JFrame {
             res.setText("0 грн.");
         });
 
+        del.addActionListener(e -> {
+            Save.delete();
+        });
+
         pack();
         setLocationRelativeTo(null);
     }
