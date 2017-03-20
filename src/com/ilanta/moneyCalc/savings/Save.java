@@ -3,7 +3,8 @@ package com.ilanta.moneyCalc.savings;
 public class Save extends FileIO {
 
     public static void write(int[] values) {
-
+        for(int i: values)
+        System.out.print(i + ",");
     }
 
     public static int[] read() {
@@ -14,5 +15,9 @@ public class Save extends FileIO {
         }
 
         return v;
+    }
+
+    public static void delete() {
+
     }
 }
