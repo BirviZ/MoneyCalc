@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class FileIO {
-    private static final String fileName = ".money";
+    private static final String fileName = System.getProperty("user.home") + File.separator + ".money";
 
     protected static boolean isExists(){
         return new File(fileName).exists();
