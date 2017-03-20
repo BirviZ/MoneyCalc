@@ -2,6 +2,8 @@ package com.ilanta.moneyCalc.savings;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 class FileIO {
@@ -19,8 +21,10 @@ class FileIO {
     	return result;
     }
     
-    protected static void writeFile() {
-    	
+    protected static void writeFile(String str) throws IOException {
+    	FileWriter fw = new FileWriter(new File(fileName), false);
+    	fw.write(str);
+    	fw.close();
     }
     
 }

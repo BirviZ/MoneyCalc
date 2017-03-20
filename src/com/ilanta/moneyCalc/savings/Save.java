@@ -1,12 +1,23 @@
 package com.ilanta.moneyCalc.savings;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Save extends FileIO {
 
     public static void write(int[] values) {
-        for(int i: values)
-        System.out.print(i + ",");
+        String str = "";
+    	for(int i = 0; i < values.length; i++) {
+    		str += String.valueOf(values[i]);
+    		if (i < values.length-1) {
+    			str += ",";
+    		}
+    	}
+        try {
+			writeFile(str);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     public static int[] read() {
