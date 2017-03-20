@@ -46,7 +46,7 @@ public class Save extends FileIO {
     }
 
     public static void delete() {
-
+    	deleteFile();
     }
     
     private static int[] zero() {

@@ -27,4 +27,10 @@ class FileIO {
     	fw.close();
     }
     
+    protected static void deleteFile() {
+    	if(isExists()) {
+    		File file = new File(fileName);
+    		file.delete();
+    	}
+    }
 }
