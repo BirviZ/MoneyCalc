@@ -50,9 +50,9 @@ public class Save extends FileIO {
     }
     
     private static int[] zero() {
-    	int[] v = new int[9];
+    	int[] v = new int[10];
 
-        for(int i = 0; i < 9; i++) {
+        for(int i = 0; i < 10; i++) {
             v[i] = 0;
         }
 

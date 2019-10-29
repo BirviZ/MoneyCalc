@@ -60,7 +60,7 @@ class BanknotePanel extends JPanel {
             @Override
             public void focusLost(FocusEvent e) {
                 try {
-                    setQuantity(Integer.valueOf(textField.getText()));
+                    setQuantity(Integer.parseInt(textField.getText()));
                 } catch (NumberFormatException except) {
                     setQuantity(0);
                 }

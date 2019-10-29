@@ -34,8 +34,8 @@ public class MainWindow extends JFrame {
 
         JPanel p1 = new JPanel();
 
-        p1.setLayout(new GridLayout(3, 3));
-        int[] n = {1, 2, 5, 10, 20, 50, 100, 200, 500};
+        p1.setLayout(new GridLayout(5, 5));
+        int[] n = {1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
         int[] values = Save.read();
         panel = new BanknotePanel[n.length];
         for (int i = 0; i < n.length; i++) {
